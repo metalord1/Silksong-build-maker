@@ -30,24 +30,37 @@ select {
 }
 
 .tools {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
   padding: 20px;
 }
 
-.tool {
-  padding: 15px;
-  border-radius: 10px;
-  background: #2c2c2c;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+.group {
+  flex: 1;
+  min-width: 220px;
+  margin: 10px;
 }
 
-.tool h3 {
-  margin-top: 0;
-  font-size: 1.2rem;
+.group h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.tool {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 8px;
+  background: #2c2c2c;
+  cursor: pointer;
+  text-align: center;
+}
+
+.tool.selected {
+  border: 2px solid #0f0;
+  background: #3a3a3a;
 }
 
 .yellow { border-left: 6px solid #FFD700; }
-.red { border-left: 6px solid #FF4500; }
 .blue { border-left: 6px solid #1E90FF; }
+.red { border-left: 6px solid #FF4500; }
