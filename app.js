@@ -52,8 +52,8 @@ const tools = [
   { name: "Placa de alfiler", color: "blue" }
 ];
 
-let selectedTools = [];
 let selectedBlason = "";
+let selectedTools = [];
 
 const MAX_BY_COLOR = {
   "Cazadora": { yellow: 3, blue: 2, red: 1 },
@@ -69,13 +69,19 @@ function renderTools() {
   const container = document.getElementById("tools-container");
   container.innerHTML = "";
 
-  tools.forEach(tool => {
-    const div = document.createElement("div");
-    div.classList.add("tool", tool.color);
-    if (selectedTools.includes(tool.name)) div.classList.add("selected");
-    div.innerHTML = `<h3>${tool.name}</h3><p>Color: ${tool.color}</p>`;
-    div.onclick = () => toggleTool(tool);
-    container.appendChild(div);
+  ["yellow","blue","red"].forEach(color => {
+    const groupDiv = document.createElement("div");
+    groupDiv.classList.add("group");
+    groupDiv.innerHTML = `<h2>${color.toUpperCase()}</h2>`;
+    tools.filter(t => t.color === color).forEach(tool => {
+      const div = document.createElement("div");
+      div.classList.add("tool");
+      if(selectedTools.includes(tool.name)) div.classList.add("selected");
+      div.innerHTML = `<h3>${tool.name}</h3>`;
+      div.onclick = () => toggleTool(tool);
+      groupDiv.appendChild(div);
+    });
+    container.appendChild(groupDiv);
   });
 }
 
@@ -84,14 +90,13 @@ function toggleTool(tool) {
     alert("Selecciona primero un Blasón.");
     return;
   }
-
   const limits = MAX_BY_COLOR[selectedBlason];
   const colorCount = selectedTools.filter(tName => tools.find(t => t.name === tName).color === tool.color).length;
 
-  if (selectedTools.includes(tool.name)) {
+  if(selectedTools.includes(tool.name)){
     selectedTools = selectedTools.filter(t => t !== tool.name);
   } else {
-    if (colorCount >= limits[tool.color]) {
+    if(colorCount >= limits[tool.color]){
       alert(`No puedes seleccionar más herramientas ${tool.color} con el blasón ${selectedBlason}`);
       return;
     }
@@ -100,12 +105,10 @@ function toggleTool(tool) {
   renderTools();
 }
 
-// Blasón select
 document.getElementById("blason").addEventListener("change", e => {
   selectedBlason = e.target.value;
-  selectedTools = []; // reset tools when blasón changes
+  selectedTools = [];
   renderTools();
 });
 
-// Inicializar al cargar
 document.addEventListener("DOMContentLoaded", renderTools);
