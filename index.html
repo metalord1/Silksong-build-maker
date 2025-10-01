@@ -1,51 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Silksong Build Maker</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blasones y Herramientas</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Creador de Builds de Silksong</h1>
-    <p class="subtitle">Crea, guarda y exporta builds cambiando herramientas y blasones.</p>
+  <header>
+    <h1>Blasones y Herramientas</h1>
+  </header>
 
-    <!-- Formulario -->
-    <div class="form-section">
-      <label>Nombre de la build</label>
-      <input type="text" id="buildName" value="Mi build" />
+  <main>
+    <section class="selector">
+      <label for="blason">Elige un Blasón:</label>
+      <select id="blason">
+        <option value="">-- Selecciona --</option>
+        <option value="Cazadora">Cazadora</option>
+        <option value="Parca">Parca</option>
+        <option value="Bestia">Bestia</option>
+        <option value="Errante">Errante</option>
+        <option value="Arquitecta">Arquitecta</option>
+        <option value="Bruja">Bruja</option>
+        <option value="Chamana">Chamana</option>
+      </select>
+    </section>
 
-      <label>Herramienta (color)</label>
-      <div id="toolsList" class="list"></div>
-
-      <label>Blasones (máx 3 ranuras)</label>
-      <div id="blasonsList" class="list"></div>
-    </div>
-
-    <!-- Vista previa -->
-    <div class="preview">
-      <h2>Vista previa</h2>
-      <div id="previewTool"></div>
-      <div id="previewBlasons"></div>
-      <div id="previewNotes" class="notes"></div>
-    </div>
-
-    <!-- Botones -->
-    <div class="actions">
-      <button id="saveBuild">Guardar Build</button>
-      <button id="randomizeBuild">Aleatorio</button>
-      <button id="exportAll">Exportar Todas</button>
-      <input type="file" id="importFile" accept="application/json" />
-    </div>
-
-    <!-- Builds guardadas -->
-    <div class="saved">
-      <h2>Builds Guardadas</h2>
-      <input type="text" id="filterInput" placeholder="Filtrar builds..." />
-      <div id="buildsList"></div>
-    </div>
-  </div>
+    <section id="tools-container" class="tools"></section>
+  </main>
 
   <script src="app.js"></script>
 </body>
