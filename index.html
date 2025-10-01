@@ -1,14 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Silksong Build Maker</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Silksong Build Maker</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div id="root"></div>
-    <script type="module" src="script.js"></script>
+  <div class="container">
+    <h1>Creador de Builds de Silksong</h1>
+    <p class="subtitle">Crea, guarda y exporta builds cambiando herramientas y blasones.</p>
+
+    <!-- Formulario -->
+    <div class="form-section">
+      <label>Nombre de la build</label>
+      <input type="text" id="buildName" value="Mi build" />
+
+      <label>Herramienta (color)</label>
+      <div id="toolsList" class="list"></div>
+
+      <label>Blasones (máx 3 ranuras)</label>
+      <div id="blasonsList" class="list"></div>
+    </div>
+
+    <!-- Vista previa -->
+    <div class="preview">
+      <h2>Vista previa</h2>
+      <div id="previewTool"></div>
+      <div id="previewBlasons"></div>
+      <div id="previewNotes" class="notes"></div>
+    </div>
+
+    <!-- Botones -->
+    <div class="actions">
+      <button id="saveBuild">Guardar Build</button>
+      <button id="randomizeBuild">Aleatorio</button>
+      <button id="exportAll">Exportar Todas</button>
+      <input type="file" id="importFile" accept="application/json" />
+    </div>
+
+    <!-- Builds guardadas -->
+    <div class="saved">
+      <h2>Builds Guardadas</h2>
+      <input type="text" id="filterInput" placeholder="Filtrar builds..." />
+      <div id="buildsList"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
