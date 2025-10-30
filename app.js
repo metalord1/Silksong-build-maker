@@ -69,7 +69,7 @@ function renderTools() {
   const container = document.getElementById("tools-container");
   container.innerHTML = "";
 
-  ["amarillo","azul","rojo"].forEach(color => {
+  ["amarilla","azul","roja"].forEach(color => {
     const groupDiv = document.createElement("div");
     groupDiv.classList.add("group");
     groupDiv.innerHTML = `<h2>${color.toUpperCase()}</h2>`;
@@ -112,5 +112,6 @@ document.getElementById("blason").addEventListener("change", e => {
 });
 
 document.addEventListener("DOMContentLoaded", renderTools);
+
 
 
