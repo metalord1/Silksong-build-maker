@@ -49,7 +49,8 @@ const tools = [
   { name: "Reserva sedeña", color: "roja" },
   { name: "Filamento voltáico", color: "azul" },
   { name: "Farol de fuego fauto", color: "azul" },
-  { name: "Placa de alfiler", color: "azul" }
+  { name: "Placa de alfiler", color: "azul" },
+  { name: "Saquito de coraza", color: "amarilla" }
 ];
 
 let selectedBlason = "";
