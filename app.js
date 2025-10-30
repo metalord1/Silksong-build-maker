@@ -76,6 +76,7 @@ function renderTools() {
     tools.filter(t => t.color === color).forEach(tool => {
       const div = document.createElement("div");
       div.classList.add("tool");
+      div.classList.add(tool.color); // <-- Aplica la clase de color correspondiente
       if(selectedTools.includes(tool.name)) div.classList.add("selected");
       div.innerHTML = `<h3>${tool.name}</h3>`;
       div.onclick = () => toggleTool(tool);
@@ -112,6 +113,3 @@ document.getElementById("blason").addEventListener("change", e => {
 });
 
 document.addEventListener("DOMContentLoaded", renderTools);
-
-
-
