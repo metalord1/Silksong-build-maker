@@ -65,3 +65,4 @@ select {
 .tool.amarilla { border-left: 6px solid #FFD700; }
 .tool.azul     { border-left: 6px solid #1E90FF; }
 .tool.roja     { border-left: 6px solid #FF4500; }
+.tool.blanca { border-left: 6px solid #fff; }
