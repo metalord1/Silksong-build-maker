@@ -1,4 +1,9 @@
 const tools = [
+  { name: "Uñas pálidas", color: "hechizo" },
+  { name: "Furia rúnica", color: "hechizo" },
+  { name: "Dardo veloz", color: "hechizo" },
+  { name: "Punto de cruz", color: "hechizo" },
+  { name: "Lanza sedeña", color: "hechizo" },
   { name: "Tormenta de hilos", color: "hechizo" },
   { name: "Broche de magnetita", color: "amarilla" },
   { name: "Colgante fragmentador", color: "amarilla" },
