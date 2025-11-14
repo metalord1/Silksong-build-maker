@@ -1,5 +1,5 @@
 const tools = [
-  { name: "Tormenta de hilos", color: "blanca" },
+  { name: "Tormenta de hilos", color: "hechizo" },
   { name: "Broche de magnetita", color: "amarilla" },
   { name: "Colgante fragmentador", color: "amarilla" },
   { name: "Brújula", color: "amarilla" },
