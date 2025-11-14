@@ -65,13 +65,13 @@ let selectedBlason = "";
 let selectedTools = [];
 
 const MAX_BY_COLOR = {
-  "Cazadora": { amarilla: 2, azul: 2, roja: 2, blanca: 1 },
-  "Parca": { amarilla: 2, azul: 2, roja: 2, blanca: 1 },
-  "Bestia": { amarilla: 2, azul: 0, roja: 2, blanca: 1 },
-  "Errante": { amarilla: 3, azul: 2, roja: 1, blanca: 1 },
-  "Arquitecta": { amarilla: 2, azul: 2, roja: 3, blanca: 1 },
-  "Bruja": { amarilla: 0, azul: 2, roja: 2, blanca: 1 },
-  "Chamana": { amarilla: 0, azul: 2, roja: 0, blanca: 3 }
+  "Cazadora": { amarilla: 2, azul: 2, roja: 2, hechizo: 1 },
+  "Parca": { amarilla: 2, azul: 2, roja: 2, hechizo: 1 },
+  "Bestia": { amarilla: 2, azul: 0, roja: 2, hechizo: 1 },
+  "Errante": { amarilla: 3, azul: 2, roja: 1, hechizo: 1 },
+  "Arquitecta": { amarilla: 2, azul: 2, roja: 3, hechizo: 0 },
+  "Bruja": { amarilla: 0, azul: 2, roja: 2, hechizo: 1 },
+  "Chamana": { amarilla: 0, azul: 2, roja: 0, hechizo: 3 }
 };
 
 function renderTools() {
