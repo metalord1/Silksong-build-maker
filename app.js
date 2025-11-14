@@ -1,4 +1,5 @@
 const tools = [
+  { name: "Tormenta de hilos", color: "blanca" },
   { name: "Broche de magnetita", color: "amarilla" },
   { name: "Colgante fragmentador", color: "amarilla" },
   { name: "Brújula", color: "amarilla" },
@@ -64,20 +65,20 @@ let selectedBlason = "";
 let selectedTools = [];
 
 const MAX_BY_COLOR = {
-  "Cazadora": { amarilla: 2, azul: 2, roja: 2 },
-  "Parca": { amarilla: 2, azul: 2, roja: 2 },
-  "Bestia": { amarilla: 2, azul: 0, roja: 2 },
-  "Errante": { amarilla: 3, azul: 2, roja: 1 },
-  "Arquitecta": { amarilla: 2, azul: 2, roja: 3 },
-  "Bruja": { amarilla: 0, azul: 2, roja: 2 },
-  "Chamana": { amarilla: 0, azul: 2, roja: 0 }
+  "Cazadora": { amarilla: 2, azul: 2, roja: 2, blanca: 1 },
+  "Parca": { amarilla: 2, azul: 2, roja: 2, blanca: 1 },
+  "Bestia": { amarilla: 2, azul: 0, roja: 2, blanca: 1 },
+  "Errante": { amarilla: 3, azul: 2, roja: 1, blanca: 1 },
+  "Arquitecta": { amarilla: 2, azul: 2, roja: 3, blanca: 1 },
+  "Bruja": { amarilla: 0, azul: 2, roja: 2, blanca: 1 },
+  "Chamana": { amarilla: 0, azul: 2, roja: 0, blanca: 3 }
 };
 
 function renderTools() {
   const container = document.getElementById("tools-container");
   container.innerHTML = "";
 
-  ["amarilla","azul","roja"].forEach(color => {
+  ["amarilla","azul","roja", "blanca"].forEach(color => {
     const groupDiv = document.createElement("div");
     groupDiv.classList.add("group");
     groupDiv.innerHTML = `<h2>${color.toUpperCase()}</h2>`;
