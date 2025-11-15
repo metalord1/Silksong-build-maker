@@ -61,6 +61,13 @@ select {
   background: #3a3a3a;
 }
 
+.counter {
+  font-size: 1em;
+  margin-bottom: 0.4em;
+  color: #444;
+  font-weight: bold;
+}
+
 /* Aplica el borde izquierdo según el color */
 .tool.amarilla { border-left: 6px solid #FFD700; }
 .tool.azul     { border-left: 6px solid #1E90FF; }
