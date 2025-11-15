@@ -132,6 +132,7 @@ function toggleTool(tool) {
   } else {
     if(colorCount = 0){
       alert(`El blasón ${selectedBlason} no permite herramientas ${tool.color}`);
+      return;
     } else {
       if(colorCount >= limits[tool.color]){
         alert(`No puedes seleccionar más herramientas ${tool.color} con el blasón ${selectedBlason}`);
