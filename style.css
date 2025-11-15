@@ -61,6 +61,7 @@ select {
   background: #3a3a3a;
 }
 
+/* Estilo para el contador de herramientas seleccionadas */
 .counter {
   font-size: 1em;
   margin-bottom: 0.4em;
