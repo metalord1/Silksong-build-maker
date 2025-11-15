@@ -83,10 +83,25 @@ function renderTools() {
   const container = document.getElementById("tools-container");
   container.innerHTML = "";
 
+  // Mostrar contador solo si hay un blason seleccionado
+  const limits = selectedBlason ? MAX_BY_COLOR[selectedBlason] : { amarilla: 0, azul: 0, roja: 0, hechizo: 0 };
+
   ["amarilla","azul","roja", "hechizo"].forEach(color => {
     const groupDiv = document.createElement("div");
     groupDiv.classList.add("group");
     groupDiv.innerHTML = `<h2>${color.toUpperCase()}</h2>`;
+
+    // Contador de seleccion restantes
+    if (selectedBlason) {
+      const colorCount = selectedTools.filter(tName => tools.find(t => t.name === tName).color === color).length;
+      const maxCount = limits[color];
+      const remaining = Math.max(0, maxCount - colorCount); // Nunca negativo
+      const counter = document.createElement("div");
+      counter.className = "counter";
+      counter.textContent = `Restantes: ${remaining} / ${maxCount}`;
+      groupDiv.appendChild(counter);
+    }
+
     tools.filter(t => t.color === color).forEach(tool => {
       const div = document.createElement("div");
       div.classList.add("tool");
